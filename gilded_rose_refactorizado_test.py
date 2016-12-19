@@ -77,3 +77,12 @@ class Backstage(NormalItem):
             self.setQuality(1)
 
         self.setSell_in()
+
+class Conjured(NormalItem):
+
+    def __init__(self, name, sell_in, quality):
+        Item.__init__(self, name, sell_in, quality) 
+
+    def update_quality(self):
+        self.setQuality(-2)
+        self.setSell_in()
