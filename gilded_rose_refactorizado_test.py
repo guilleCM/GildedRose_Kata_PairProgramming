@@ -1,6 +1,9 @@
-#autores: guille y marc
+# autores: guille y marc
 # -*- coding: utf-8 -*-
+
+
 class Item:
+
     def __init__(self, name, sell_in, quality):
         self.name = name
         self.sell_in = sell_in
@@ -9,11 +12,13 @@ class Item:
     def __repr__(self):
         return "%s, %s, %s" % (self.name, self.sell_in, self.quality)
 
+
 class Interfaz():
 
     def update_quality(self):
         # Comportamiento a implementar en las subclases
         pass
+
 
 class NormalItem(Item, Interfaz):
     # Herencia múltiple
@@ -41,35 +46,37 @@ class NormalItem(Item, Interfaz):
             self.setQuality(-2)
         self.setSell_in()
 
+
 class Sulfuras(NormalItem):
 
     def __init__(self, name, sell_in, quality):
-        Item.__init__(self, name, sell_in, quality) 
+        Item.__init__(self, name, sell_in, quality)
 
-        
     def update_quality(self):
         assert self.quality == 80, "Quality de %s no es 80" % self.__class__.__name__
         pass
 
+
 class AgedBrie(NormalItem):
 
     def __init__(self, name, sell_in, quality):
-        Item.__init__(self, name, sell_in, quality) 
+        Item.__init__(self, name, sell_in, quality)
 
     def update_quality(self):
-        self.setQuality(1)        
+        self.setQuality(1)
         self.setSell_in()
+
 
 class Backstage(NormalItem):
 
     def __init__(self, name, sell_in, quality):
-        Item.__init__(self, name, sell_in, quality) 
+        Item.__init__(self, name, sell_in, quality)
 
     def update_quality(self):
-        
+
         if self.sell_in < 0:
             self.quality = 0
-        elif self.sell_in <=5:
+        elif self.sell_in <= 5:
             self.setQuality(3)
         elif self.sell_in <= 10:
             self.setQuality(2)
@@ -78,10 +85,11 @@ class Backstage(NormalItem):
 
         self.setSell_in()
 
+
 class Conjured(NormalItem):
 
     def __init__(self, name, sell_in, quality):
-        Item.__init__(self, name, sell_in, quality) 
+        Item.__init__(self, name, sell_in, quality)
 
     def update_quality(self):
         self.setQuality(-2)
