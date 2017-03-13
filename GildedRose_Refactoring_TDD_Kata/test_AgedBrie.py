@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-from gilded_rose_refactorizado_test import *
 
+from gilded_rose_refactorizado import *
 
 if __name__ == '__main__':
 

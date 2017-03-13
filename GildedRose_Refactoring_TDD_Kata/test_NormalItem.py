@@ -1,10 +1,9 @@
-# -*- coding: utf-8 -*-
-from gilded_rose_refactorizado_test import *
 
+from gilded_rose_refactorizado import *
 
 if __name__ == '__main__':
 
-    item = AgedBrie("Aged Brie", 2, 0)
+    item = NormalItem("Elixir of the Mongoose", 5, 7)
     # chequeo herencia __repr__
     print(item)
     # test update_quality

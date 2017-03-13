@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
+
 from gilded_rose_refactorizado_test import *
+
+class Sulfuras(NormalItem):
+    def __init__(self, name, sell_in, quality):
+        Item.__init__(self, name, sell_in, quality)
+
+    def setQuality(self, valor):
+    	self.quality==80
+
+
 
 if __name__ == '__main__':
 
